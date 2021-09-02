@@ -6,35 +6,17 @@ namespace PPAssignment1
 {
     class Program
     {
-        private static int x;
+        
+
         static void Main(string[] args)
         {
-            Thread t1 = new Thread(() => Incrementx(1000000));
-            Thread t2 = new Thread(() => Incrementx(1000000));
+            E2 e2 = new E2();
+            E3 e3 = new E3();
 
-
-            Stopwatch sw = Stopwatch.StartNew();
-
-            t1.Start();
-            t2.Start();
-
-            t1.Join();
-            t2.Join();
-
-            sw.Stop();
-
-            Console.WriteLine(sw.Elapsed);
-            Console.WriteLine(x);
-
+            e3.RunE3();
         }
 
 
-        public static void Incrementx(int increment)
-        {
-            for (int i = 0; i < increment; i++)
-            {
-                x++;
-            }
-        }
+       
     }
 }
